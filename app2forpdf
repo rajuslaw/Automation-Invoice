@@ -1,0 +1,28 @@
+
+    return extract_invoice_attributes(text)
+
+# Endpoint to extract invoice attributes from image or PDF
+@app.route('/extract_invoice_attributes', methods=['POST'])
+def extract_invoice_attributes_endpoint():
+    if 'file' not in request.files:
+        return jsonify({'error': 'No file provided'}), 400
+
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({'error': 'No file selected'}), 400
+
+    if file.filename.endswith('.pdf'):
+        invoice_attributes = process_pdf(file)
+    #elif file.filename.endswith(('.jpg', '.jpeg', '.png')):
+       # invoice_attributes = process_image(file)
+    else:
+        return jsonify({'error': 'Unsupported file format'}), 400
+
+    return jsonify({
+        'invoice_number': invoice_attributes[0],
+        'invoice_date': invoice_attributes[1],
+        'invoice_amount': invoice_attributes[2]
+    })
+
+if __name__ == '__main__':
+    app.run(debug=True)
