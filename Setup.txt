@@ -1,3 +1,6 @@
+//EXE tessrect
+https://github.com/UB-Mannheim/tesseract/wiki
+
 //Virtual Env Setup 
 pip install virtualenv
 //create Virtual env
