@@ -23,8 +23,4 @@ pip install spacy
 python -m spacy download en_core_web_sm
 
 
----Utility Command--------
-//CURL Command
--curl -X POST -F "file=@invoice.png" http://127.0.0.1:5000/extract_invoice_attributes
-//tar.gz extract command
-tar -xvzf abc.tar.gz -C C:\users\data
+
