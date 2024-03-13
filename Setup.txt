@@ -1,0 +1,19 @@
+//Virtual Env Setup 
+-pip install virtualenv
+-virtualenv venv_invoice
+//Activate virtual environment
+-venv_invoice\Scripts\activate
+
+//Approach 3 involves using natural language processing (NLP) techniques to extract information from unstructured text data,
+such as free-form descriptions or notes in invoice documents.
+One common technique for this task is Named Entity Recognition (NER).
+Here's an example code using the spaCy library in Python to perform NER and extract invoice attributes:
+-pip install spacy
+//Downlaod english launguage
+-python -m spacy download en_core_web_sm
+
+
+
+//CURL Command
+-curl -X POST -F "file=@invoice.png" http://127.0.0.1:5000/extract_invoice_attributes
+
