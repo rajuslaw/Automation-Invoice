@@ -1,4 +1,28 @@
+#import pytesseract
+import pdfplumber
+from PIL import Image
+from flask import Flask, request, jsonify
 
+app = Flask(__name__)
+
+# Function to extract invoice attributes from text
+def extract_invoice_attributes(text):
+    # Your extraction logic here
+    # This function should return the invoice number, date, and amount extracted from the text
+    # For now, let's just return placeholders
+    return "INV12345", "2023-03-10", "$500.00"
+
+# Function to process image file
+#def process_image(image_file):
+    #text = pytesseract.image_to_string(image_file)
+  #  return extract_invoice_attributes(text)
+
+# Function to process PDF file
+def process_pdf(pdf_file):
+    text = ""
+    with pdfplumber.open(pdf_file) as pdf:
+        for page in pdf.pages:
+            text += page.extract_text()
     return extract_invoice_attributes(text)
 
 # Endpoint to extract invoice attributes from image or PDF
