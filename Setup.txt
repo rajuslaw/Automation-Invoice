@@ -1,6 +1,9 @@
 //Virtual Env Setup 
 -pip install virtualenv
+//create Virtual env
 -virtualenv venv_invoice
+OR
+- python3 -m venv venv
 //Activate virtual environment
 -venv_invoice\Scripts\activate
 
