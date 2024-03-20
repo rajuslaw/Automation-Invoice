@@ -6,3 +6,4 @@ tar -xvzf abc.tar.gz -C C:\users\data
 
 curl -X POST -F "file=@file.pdf" http://127.0.0.1:5000/extract_invoice_attributes
 
+https://docs.google.com/document/d/16tiLOmoxcpqfxjqFzcRnAC_eGPLgtZRBLUk07v2f47o/edit?usp=sharing
